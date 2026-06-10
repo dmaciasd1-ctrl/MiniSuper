@@ -47,7 +47,7 @@ public class TiendaSistema {
 
             Producto prod = it.next();
 
-            // Variación pequeña diaria
+            // Variacion pequeña diaria
             double variacion = 0.8 + (random.nextDouble() * 0.4);
 
             int cantidadVendida =
@@ -55,7 +55,7 @@ public class TiendaSistema {
                     * factorDemandaMes
                     * variacion);
 
-            // No vender más de lo disponible
+            // No vender mas de lo disponible
             if (cantidadVendida > prod.getStock()) {
                 cantidadVendida = prod.getStock();
             }
@@ -115,7 +115,7 @@ public class TiendaSistema {
                 System.out.println(
                         "[ALERTA] "
                         + prod.getNombre()
-                        + " alcanzó stock mínimo."
+                        + " alcanzo stock minimo."
                 );
 
                 // No pedir si lleva varios días
@@ -144,7 +144,7 @@ public class TiendaSistema {
                         System.out.println(
                                 "[REABASTECIMIENTO] "
                                 + prod.getNombre()
-                                + " recibió "
+                                + " recibio "
                                 + cantidadAPedir
                                 + " unidades."
                         );
@@ -154,7 +154,7 @@ public class TiendaSistema {
                         System.out.println(
                                 "[SIN PEDIDO] "
                                 + prod.getNombre()
-                                + " ya está cerca del stock máximo."
+                                + " ya esta cerca del stock maximo."
                         );
                     }
                 }

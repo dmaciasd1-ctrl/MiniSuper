@@ -26,30 +26,30 @@ public class MiniSuper {
         minisuper.AñadirProducto(p2);
         minisuper.AñadirProducto(p3);
         
-     String[] meses = {
-    "Enero", "Febrero", "Marzo", "Abril",
-    "Mayo", "Junio", "Julio", "Agosto",
-    "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-     int indiceMes = 0;
+        String[] meses = {
+        "Enero", "Febrero", "Marzo", "Abril",
+        "Mayo", "Junio", "Julio", "Agosto",
+        "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+        int indiceMes = 0;
      
-     while(true){
+        while(true){
 
-    TiendaSistema.iniciarMes(meses[indiceMes]);
+            TiendaSistema.iniciarMes(meses[indiceMes]);
 
-    for(int dia = 1; dia <= 31; dia++){
+            for(int dia = 1; dia <= 31; dia++){
 
-        TiendaSistema.simularDia(dia);
-        minisuper.mostrarInventario();
+                TiendaSistema.simularDia(dia);
+                minisuper.mostrarInventario();
+                
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            indiceMes = (indiceMes + 1) % 12;
         }
-    }
-
-    indiceMes = (indiceMes + 1) % 12;
-     }
     }
 
     
