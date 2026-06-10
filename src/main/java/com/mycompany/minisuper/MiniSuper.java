@@ -5,6 +5,7 @@
 package com.mycompany.minisuper;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
 import modelos.Producto;
 import modelos.TiendaSistema;
 import static modelos.TiendaSistema.simularDia;
@@ -26,17 +27,23 @@ public class MiniSuper {
         minisuper.AñadirProducto(p2);
         minisuper.AñadirProducto(p3);
         
+        int anioActual = 2026;
+        int mesActual = 1;
+        
         String[] meses = {
-        "Enero", "Febrero", "Marzo", "Abril",
+        "","Enero", "Febrero", "Marzo", "Abril",
         "Mayo", "Junio", "Julio", "Agosto",
         "Septiembre", "Octubre", "Noviembre", "Diciembre"};
         int indiceMes = 0;
      
         while(true){
+            
+            YearMonth yearMonth = YearMonth.of(anioActual, mesActual);
+            int diasDelMes = yearMonth.lengthOfMonth();
+            TiendaSistema.iniciarMes(meses[mesActual]);
+            
 
-            TiendaSistema.iniciarMes(meses[indiceMes]);
-
-            for(int dia = 1; dia <= 31; dia++){
+            for(int dia = 27; dia <= diasDelMes; dia++){
 
                 TiendaSistema.simularDia(dia);
                 minisuper.mostrarInventario();
@@ -48,9 +55,11 @@ public class MiniSuper {
                 }
             }
 
-            indiceMes = (indiceMes + 1) % 12;
+            mesActual++;
+            if (mesActual > 12) {
+                mesActual = 1;
+                anioActual++;
+            }
         }
-    }
-
-    
+    }  
 }
