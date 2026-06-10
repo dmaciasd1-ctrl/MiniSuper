@@ -21,7 +21,7 @@ public class MiniSuper {
         Producto p1 = new Producto("Leche", 20, 5 ,40, 10,LocalDate.of(2026,06,15));
         Producto p2 = new Producto ("papas" , 15 , 3 ,15, 5,LocalDate.of(2026,07,20));
         Producto p3 = new Producto ("gaseosa", 30 , 10,20, 10,LocalDate.of(2026,6,20));
-        //hola mun
+        //hola mundo
         minisuper.AñadirProducto(p1);
         minisuper.AñadirProducto(p2);
         minisuper.AñadirProducto(p3);
